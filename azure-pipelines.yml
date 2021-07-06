@@ -16,14 +16,23 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    npm install -g @ionic/cli
+  displayName: 'ionic install'
+
+- script: |
+    npm install cordova@9 -g
+  displayName: 'cordova install'
+
+- script: |
     npm i
   displayName: 'npm install'
 
 - script: |
-    ionic cordova platform add android
+    ionic cordova platform android
   displayName: 'add platform'
 
 - script: |
-    ionic cordova build android
-  displayName:  'build android'
+     ionic cordova build android
+  displayName: 'build android'
+
     
