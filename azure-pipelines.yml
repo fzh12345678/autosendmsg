@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: vs2017-win2016
 
 steps:
 - task: NodeTool@0
@@ -16,6 +16,14 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install
+    npm i
+  displayName: 'npm install'
+
+- script: |
+    ionic cordova platform add android
+  displayName: 'add platform'
+
+- script: |
     ionic cordova build android
-  displayName: 'npm install and build'
+  displayName:  'build android'
+    
