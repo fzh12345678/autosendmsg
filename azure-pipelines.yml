@@ -28,10 +28,6 @@ steps:
   displayName: 'npm install'
 
 - script: |
-    ionic cordova platform android
-  displayName: 'add platform'
-
-- script: |
      ionic cordova build android
   displayName: 'build android'
 
