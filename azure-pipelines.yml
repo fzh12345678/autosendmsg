@@ -31,4 +31,12 @@ steps:
      ionic cordova build android
   displayName: 'build android'
 
-    
+- task: UniversalPackages@0
+  displayName: Universal Publish
+  inputs:
+    command: publish
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    vstsFeedPackagePublish: 'app-debug.apk'
+    versionOption: custom
+    versionPublish: '1.0'
+    packagePublishDescription: 'test build android package'
