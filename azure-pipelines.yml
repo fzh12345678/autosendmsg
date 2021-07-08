@@ -31,12 +31,8 @@ steps:
      ionic cordova build android
   displayName: 'build android'
 
-- task: UniversalPackages@0
-  displayName: Universal Publish
+- task: PublishPipelineArtifact@1
   inputs:
-    command: publish
-    publishDirectory: '$(Build.ArtifactStagingDirectory)'
-    vstsFeedPackagePublish: 'app-debug.apk'
-    versionOption: custom
-    versionPublish: '1.0'
-    packagePublishDescription: 'test build android package'
+    targetPath: 'D:\a\1\s\platforms\android\app\build\outputs\apk\debug\app-debug.apk'
+    artifactType: 'pipeline'
+    artifactName: 'autosendmsg'
