@@ -31,12 +31,6 @@ steps:
      ionic cordova build android --release --prod
   displayName: 'build android'
 
-# - task: PublishPipelineArtifact@1
-#   inputs:
-#     targetPath: 'D:\a\1\s\platforms\android\app\build\outputs\apk\debug\app-debug.apk'
-#     artifactType: 'pipeline'
-#     artifactName: 'autosendmsg'
-
 - task: AndroidSigning@3
   inputs:
     apkFiles: '**/*.apk' 
@@ -45,3 +39,10 @@ steps:
     apksignerKeystorePassword: 'abcd@1234'
     apksignerKeystoreAlias: 'key0'
     apksignerKeyPassword: 'abcd@1234'
+
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: 'D:\a\1\s\platforms\android\app\build\outputs\apk\debug\app-debug.apk'
+    artifactType: 'pipeline'
+    artifactName: 'autosendmsg'
