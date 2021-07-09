@@ -43,6 +43,6 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: 'D:\a\1\s\platforms\android\app\build\outputs\apk\debug\app-debug.apk'
+    targetPath: 'D:\a\1\s\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk'
     artifactType: 'pipeline'
     artifactName: 'autosendmsg'
