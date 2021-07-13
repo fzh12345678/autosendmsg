@@ -42,9 +42,10 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    sourceFolder: $(Agent.BuildDirectory)
+    sourceFolder: '$(Agent.BuildDirectory)\platforms\android\app\build\outputs\apk\release'
     contents: '**' 
     targetFolder: 'D:\android\package'
+    OverWrite: true
 
 - task: PublishBuildArtifacts@1
   inputs:
