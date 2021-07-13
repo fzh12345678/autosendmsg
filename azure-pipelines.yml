@@ -40,9 +40,19 @@ steps:
     apksignerKeystoreAlias: 'key0'
     apksignerKeyPassword: 'abcd@1234'
 
-
-- task: PublishPipelineArtifact@1
+- task: CopyFiles@2
   inputs:
-    targetPath: 'D:\a\1\s\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk'
-    artifactType: 'pipeline'
+    sourceFolder: $(Agent.BuildDirectory)
+    contents: '**' 
+    targetFolder: 'D:\android\package'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: 'D:\android\package'
     artifactName: 'autosendmsg'
+
+# - task: PublishPipelineArtifact@1
+#   inputs:
+#     targetPath: 'D:\a\1\s\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk'
+#     artifactType: 'pipeline'
+#     artifactName: 'autosendmsg'
