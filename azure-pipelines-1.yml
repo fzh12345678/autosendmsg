@@ -10,7 +10,6 @@ pool:
   vmImage: macOS-10.14
 
 variables:
-  scheme: '\Users\runner\work\1\s\platforms\ios\autosendmsg.xcworkspace\xcshareddata\xcschemes\autosendmsg.xcscheme'
   sdk: 'iphoneos'
   configuration: 'Release'
   
@@ -49,12 +48,11 @@ steps:
 - task: Xcode@5
   inputs:
     sdk: '$(sdk)'
-    scheme: '$(scheme)'
-    xcWorkspacePath: '\Users\runner\work\1\s\platforms\ios\autosendmsg.xcworkspace'
+    actions: 'build'
     configuration: '$(configuration)'
     xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
     exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
-    packageApp: false
+    packageApp: true
 
 # - task: AndroidSigning@3
 #   inputs:
