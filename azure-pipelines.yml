@@ -60,6 +60,15 @@ steps:
     pathToPublish: 'D:\android\package'
     artifactName: 'autosendmsg'
 
+- task: UniversalPackages@0
+  displayName: Universal Publish
+  inputs:
+    command: publish
+    publishDirectory: 'D:\android\package'
+    vstsFeedPublish: 'test azure/fengzhaohui'
+    vstsFeedPackagePublish: 'autosendmsg'
+    packagePublishDescription: 'test package'
+
 # - task: PublishPipelineArtifact@1
 #   inputs:
 #     targetPath: 'D:\a\1\s\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk'
