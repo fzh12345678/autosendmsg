@@ -47,7 +47,7 @@ steps:
 
 - task: Xcode@5
   inputs:
-    xcWorkspacePath: platforms/ios/autosendmsg.xcworkspace
+    xcWorkspacePath: platforms/ios
     scheme: platforms/ios/autosendmsg
     #sdk: '$(sdk)'
     actions: 'build'
