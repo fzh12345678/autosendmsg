@@ -55,7 +55,7 @@ steps:
     configuration: '$(configuration)'
     xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
     exportMethod: 'enterprise'
-    exportOptions: auto
+    exportOptions: specify
     exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
     packageApp: true
 
