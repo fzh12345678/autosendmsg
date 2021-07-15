@@ -48,8 +48,8 @@ steps:
 - task: Xcode@5
   inputs:
     xcWorkspacePath: platforms/ios/autosendmsg.xcworkspace
-    scheme: platforms/ios/autosendmsg.xcworkspace/xcshareddata/xcschemes/autosendmsg.xcscheme
-    sdk: '$(sdk)'
+    #scheme: platforms/ios/autosendmsg.xcworkspace/xcshareddata/xcschemes/autosendmsg.xcscheme
+    #sdk: '$(sdk)'
     actions: 'build'
     configuration: '$(configuration)'
     xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
