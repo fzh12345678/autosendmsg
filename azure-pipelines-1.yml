@@ -53,10 +53,12 @@ steps:
     actions: 'build'
     signingOption: nosign
     configuration: '$(configuration)'
+    teamId: 'fzh.adm.cn'
     xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
     exportMethod: 'enterprise'
     exportOptions: specify
     exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
+    exportTeamId: 'fzh.adm.cn'
     packageApp: true
 
 # - task: AndroidSigning@3
